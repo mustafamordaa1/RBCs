@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<section>
+<div class="recently">
+    <div class="section-title">جميع المحاضرات</div>
+</div>
+    <ul class="nav nav-pills my-3 p-1" id="pills-tab" role="tablist">
+        <div class="d-flex flex-wrap justify-content-center w-100">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-year2-tab" data-bs-toggle="pill" data-bs-target="#pills-year2" type="button" role="tab" aria-controls="pills-year2" aria-selected="true">السنة الثانية</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-year3-tab" data-bs-toggle="pill" data-bs-target="#pills-year3" type="button" role="tab" aria-controls="pills-year3" aria-selected="false">السنة الثالثة</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-year4-tab" data-bs-toggle="pill" data-bs-target="#pills-year4" type="button" role="tab" aria-controls="pills-year4" aria-selected="false">السنة الرابعة</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-year5-tab" data-bs-toggle="pill" data-bs-target="#pills-year5" type="button" role="tab" aria-controls="pills-year5" aria-selected="false">السنة الخامسة</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-year6-tab" data-bs-toggle="pill" data-bs-target="#pills-year6" type="button" role="tab" aria-controls="pills-year6" aria-selected="false">السنة السادسة</button>
+          </li>
+        </div>
+    </ul>
+
+    <div class="tab-content text-center" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-year2" role="tabpanel" aria-labelledby="pills-year2-tab">
+            <div class="d-flex flex-column align-items-center">
+            {% for book in year2 %}
+            <div class="section-element">
+                <a href="2/{{book}}">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <span>{{book}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% if not year2 %}
+            <div class="vh-50 d-flex flex-column justify-content-center">
+                <h4>المحاضرات غير متوفرة حاليا</h4>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-year3" role="tabpanel" aria-labelledby="pills-year3-tab">
+            <div class="d-flex flex-column align-items-center">
+            {% for book in year3 %}
+            <div class="section-element">
+                <a href="3/{{book}}">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <span>{{book}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% if not year3 %}
+            <div class="vh-50 d-flex flex-column justify-content-center">
+                <h4>المحاضرات غير متوفرة حاليا</h4>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-year4" role="tabpanel" aria-labelledby="pills-year4-tab">
+            <div class="d-flex flex-column align-items-center">
+            {% for book in year4 %}
+            <div class="section-element">
+                <a href="4/{{book}}">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <span>{{book}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% if not year4 %}
+            <div class="vh-50 d-flex flex-column justify-content-center">
+                <h4>المحاضرات غير متوفرة حاليا</h4>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-year5" role="tabpanel" aria-labelledby="pills-year5-tab">
+            <div class="d-flex flex-column align-items-center">
+            {% for book in year5 %}
+            <div class="section-element">
+                <a href="5/{{book}}">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <span>{{book}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% if not year5 %}
+            <div class="vh-50 d-flex flex-column justify-content-center">
+                <h4>المحاضرات غير متوفرة حاليا</h4>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-year6"role="tabpanel" aria-labelledby="pills-year6-tab">
+            <div class="d-flex flex-column align-items-center">
+            {% for book in year6 %}
+            <div class="section-element">
+                <a href="6/{{book}}">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <span>{{book}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% if not year6 %}
+            <div class="vh-50 d-flex flex-column justify-content-center">
+                <h4>المحاضرات غير متوفرة حاليا</h4>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="recently">
+        <div class="section-title">أحدث الملفات</div>
+        {% for book in books %}
+        <div class="section-element">
+            <a href="{{ book.link }}">{{ book.subject }} : {{ book.title }} - السنة {{ book.year }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

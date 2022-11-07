@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="recently">
+        <div class="section-title fs-3">{{ subject }} - جميع المحاضرات</div>
+        {% for book in lectures %}
+        <div class="section-element fs-6 d-flex flex-row justify-content-between align-items-center">
+            <a href="{{ book.link }}">{{ book.title }} - السنة {{ book.year }} {% if book.part_num %}- الجزء {{ book.part_num }}{% endif %}</a>
+            <div>
+            <a class="mx-1" href="{{ book.link|get_url }}">
+                <svg xmlns="http://www.w3.org/2000/svg"  style="color:white;" width="25" height="25" fill="currentColor" class="bi bi-download mx-1" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                </svg>
+            </a>
+            <a class="mx-1" data-bs-toggle="collapse" href="#collapse{{ book.id }}" role="button" aria-expanded="false" aria-controls="collapse{{ book.id }}">
+                <svg xmlns="http://www.w3.org/2000/svg"  style="color:white;" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+            </a>
+            </div>
+        </div>
+        <div class="collapse" style="width:90%;" id="collapse{{ book.id }}">
+            <div class="card card-body">
+              {{ book.description }} / د.{{ book.doctor }} / {{ book.version }}
+            </div>
+        </div>
+        {% endfor %}
+        {% if not lectures %}
+        <div class="vh-50 d-flex flex-column justify-content-center">
+        <h4>المحاضرات غير متوفرة حاليا</h4>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

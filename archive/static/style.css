@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "main";
+    src:url("../static/fonts/Hacen.ttf");
+}
+body{
+    margin: 0;
+    font-family: 'main';
+}
+nav{
+    position:sticky;
+    top:0;
+}
+.nav-link{
+    color:#231F20;
+}
+.nav-link:hover{
+    color: #DD2327;
+}
+
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color:ghostwhite;
+}
+#title {
+    font-size: 40px;
+    font-weight:900;
+    text-align: center;
+    padding-top: 5px;
+}
+#logo{
+    margin: 10px;
+}
+.tabs{
+    margin: 10px;
+}
+.tab{
+    font-family: 'main';
+    border-radius: 10px;
+    background-color: #DD2327;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.recently{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.section-title{
+    font-size: 30px;
+    font-weight: 800;
+    color: #231F20;
+    margin: 20px;
+}
+.section-element{
+    margin: 10px 0px;
+    background-color: #DD2327;
+    font-size: 20px;
+    padding: 15px;
+    width: 90%;
+    border-radius: 10px;
+}
+.section-element>a{
+    color: white;
+    text-decoration: none;
+}
+.section-element>a:hover{
+    color: #231F20;
+}
+.nav-item>button{
+    background-color: #DD2327;
+}
